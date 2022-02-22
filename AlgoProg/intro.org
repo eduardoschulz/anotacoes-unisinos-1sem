@@ -1,0 +1,55 @@
+#+TITLE: Introdução
+
+* Sistema de Notas
++ Grupo A e B
++ Média = (0,33 * Grau A) + (0,67 * B)
++ Grau C - prova extra
+
+** Grau A
++ teste prático 10%
++ prova prático 60%
++ prova teórico 10%
++ trabalho extraclasse
+** Grau B
++ prova prático 60%
++ prova teórica 10%
++ trabalho extraclasse 20%
++ maratona de programação 10%
+
+** Extras
+
++ exercício em aula sem aviso prévio
+  - Nota extra nas provas e/ou trabalhos
+  - Apenas exercícios totalmente corretas receberão pontos
++ Maratonas de programação
+  - Duas duplas de maratona
+  - Atividades em grupos e em sala de aula
+  - Caderao de problemas para resolver
+
+* Fundamentos das Aulas
++ Disciplinas em Laboratório
++ Aulas práticas/teóricas
++ Exercícios práticas/teóricas
++ Provas práticas/teorias
++ Moodle
+
+* Encontros presenciais
++ Nossas atividades prevê alguns encontros presenciais obrigatórios
++ Turma será dividida em 2 Grupos
+    - Grupo A
+    - Grupo B
+
++ A cada encontro presencial, determinado grupo deve comparecer presencialmente
+  - alguns encontros(provas) todos devem comparecer.
+
+* Considerações Adicionais
++ Feriados do primeiro semestre de 2022
+  - 8 Feriados
+    + 28/02 Carnaval
+    + 01/03 Carnaval
+    + 14/04 Qnt Santa
+    + 15/04 Sex Santa
+    + 16/04 Sáb de Alel
+    + 17/04 Páscoa
+    + 21/04 Tiradentes
+    + 16/06
