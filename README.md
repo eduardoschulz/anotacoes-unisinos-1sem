@@ -1,2 +1,1 @@
-# anotacoes-unisinos-1sem
-minhas anotações do 1 semestre 2022
+# Anotações do Primeiro Semestre do Curso de Ciência Computação de 2022.
