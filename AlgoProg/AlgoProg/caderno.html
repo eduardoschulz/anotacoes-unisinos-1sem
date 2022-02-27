@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-02-21 Mon 23:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Caderno</title>
+<meta name="author" content="Eduardo Schulz" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Caderno</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd2f78ef">1. Arquitetura de Von Neumann</a>
+<ul>
+<li><a href="#orgec85048">1.1. Detalhes</a></li>
+</ul>
+</li>
+<li><a href="#org1c66c47">2. Instruções</a>
+<ul>
+<li><a href="#orgd8a38f2">2.1. etapas de processamento de instruções</a></li>
+</ul>
+</li>
+<li><a href="#org76cbf1a">3. Linguagem de Máquina x Linguagem de Alto Nível</a>
+<ul>
+<li><a href="#org18ea425">3.1. Processos de Tradução</a></li>
+</ul>
+</li>
+<li><a href="#org6e3e058">4. Algoritmo</a>
+<ul>
+<li><a href="#org58092a4">4.1. Formas de Representar um Algoritmo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd2f78ef" class="outline-2">
+<h2 id="orgd2f78ef"><span class="section-number-2">1.</span> Arquitetura de Von Neumann</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>A arquitetura de Von Neumann mesmo depois de varias decadas continua a ser parte da informatica atual.</li>
+<li>Essa arquitetura foi proposta por Neumann na década de 40.</li>
+<li>Composto por basicamente 3 subsistemas: CPU, Unidade de Memória Principal (RAM) e Unidades de Entradas/Saídas(IO).</li>
+<li><img src="./archNeumann.png" alt="archNeumann.png" /></li>
+</ul>
+</div>
+<div id="outline-container-orgec85048" class="outline-3">
+<h3 id="orgec85048"><span class="section-number-3">1.1.</span> Detalhes</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Unidade de Controle(CPU): identifica e decodifica as <a href="#org1c66c47">2</a>, adicionando a unidade responsável pela sua execução</li>
+<li>Unidade de Aritmética e Lógica(ALU): executa as operações lógicas e aritméticas</li>
+<li>Unidade de Memória Principal (RAM - Random Acess Memory): armazena o programa e seus dados(variáveis etc&#x2026;)</li>
+<li>Unidade de Entrada: Fazem a interface entre informações externas e Unidade de Memória Principal. Exemplos: Telclado, mouse &#x2026;
+<ul class="org-ul">
+<li>Unidades de Saída: Exibem as informações que encontradas na Unidade de Memória Principal para meios externos. Exemplos: Monitores, Impressoras&#x2026;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1c66c47" class="outline-2">
+<h2 id="org1c66c47"><span class="section-number-2">2.</span> Instruções</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Instruções são regras que vão indicar ao computador quais dados devem ser operados e quais operações devem ser realizadas.
+</p>
+
+<p>
+10 + 10 =
+</p>
+</div>
+<div id="outline-container-orgd8a38f2" class="outline-3">
+<h3 id="orgd8a38f2"><span class="section-number-3">2.1.</span> etapas de processamento de instruções</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>CPU busca por instruções na Memória.</li>
+<li>CPU decodifica a instruçãom, definindo as posições de memória necessárias para sua execução</li>
+<li>CPU transfere os dados para a ALU</li>
+<li>A ALU executa as operações sobre os dados e resultado é armazenado na memória</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org76cbf1a" class="outline-2">
+<h2 id="org76cbf1a"><span class="section-number-2">3.</span> Linguagem de Máquina x Linguagem de Alto Nível</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Para instruir uma maquina é necessário uma linguagem especial, Linguagem de Maquina.</li>
+</ul>
+
+<p>
+Linguagem de Máquina - Tipo mais primitivo de linguagem. É a linguagem que o CPU compreende.
+</p>
+
+<p>
+Linguagem de Alto Nível - Linguagens criadas para facilitar a comunicação com o CPU. Essas linguagens precisam ser traduzidas para a Linguagem de Máquina.
+</p>
+</div>
+<div id="outline-container-org18ea425" class="outline-3">
+<h3 id="org18ea425"><span class="section-number-3">3.1.</span> Processos de Tradução</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Linguagens de Alto Nível:
+<ul class="org-ul">
+<li>C</li>
+<li>C++</li>
+<li>Java</li>
+<li>Pascal</li>
+</ul></li>
+<li>Essas linguagens são traduzidas para a linguagem de maquina.</li>
+<li>Os dois principais processos de tradução são:</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org35f7d02"></a>Processo de Interpretação<br />
+<div class="outline-text-5" id="text-3-1-0-1">
+<ul class="org-ul">
+<li>um interpretador</li>
+
+<li>Um programa pode ser executado em qualquer maquina, desde que jhaja o interpretador disponivel. O codigo ira funcionar no Windows, OSX ou Linux mas eles precisam do interpretador.</li>
+
+<li>Execução mais lenta</li>
+
+<li>O Erro não eh detectado ate ser instruido no CPU</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgf803502"></a>Processo de Compilação<br />
+<div class="outline-text-5" id="text-3-1-0-2">
+<ul class="org-ul">
+<li>Lingua -&gt; Compilador -&gt; Programa Objeto -&gt; Arquitetura -&gt; Execucao</li>
+<li>Erro eh detectado na compilação</li>
+<li>O código produzido não é portavel para qualquer arquitetura</li>
+<li>Diferentes executaveis para diferentes arquiteturas</li>
+
+<li>Java é uma Lingua Compilada</li>
+<li>O compilador Java, entretandom não gera código para o <i>host</i> e sim para a máquina virtual java(a JVM).</li>
+</ul>
+
+<p>
+Programa fonte(teste.java) -&gt; Compilador Javac -&gt; programa objeto(bytecode) exemplo teste.class &#x2013;&gt; jvm
+Tipos de Erro:
+</p>
+<ul class="org-ul">
+<li>Lógico(compilador não consegue prever)</li>
+<li>Compilação (compilador encontrou algum erro seja ele na syntax ou estrutura); Se compilar irá gerar um executavel; Se compilar irá gerar um executavel.</li>
+<li>Execução(segmentation fault, etc&#x2026;)</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6e3e058" class="outline-2">
+<h2 id="org6e3e058"><span class="section-number-2">4.</span> Algoritmo</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Um algoritmo é uma sequência de passos finita, que devem ser seguidos para alcançar algum objetivo</li>
+<li>Para ordenar ao computador que realize uma determianda tarefa, um algoritmo é descrito em uma linguagem de programação</li>
+<li>Este algoritmo é, então, compilado (ou interpretado) e executado.</li>
+</ul>
+</div>
+<div id="outline-container-org58092a4" class="outline-3">
+<h3 id="org58092a4"><span class="section-number-3">4.1.</span> Formas de Representar um Algoritmo</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Representam o algoritmo no nível lógico
+<ul class="org-ul">
+<li>Abstrai detalhes referentes ao código</li>
+<li>não é ligada a alguma linguagem</li>
+</ul></li>
+<li>Fluxograma
+<ul class="org-ul">
+<li>Forma mais visual de ver o algoritmo</li>
+<li><img src="./fluxo.png" alt="fluxo.png" /></li>
+</ul></li>
+<li>Pseudocódigo(português estruturado)</li>
+<li>Descritiva (narração)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Eduardo Schulz</p>
+<p class="date">Created: 2022-02-21 Mon 23:11</p>
+</div>
+</body>
+</html>

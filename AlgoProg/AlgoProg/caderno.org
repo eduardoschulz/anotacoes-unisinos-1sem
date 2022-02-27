@@ -1,0 +1,119 @@
+#+TITLE: Caderno
+#+AUTHOR: Eduardo Schulz
+#+EMAIL: SchulzEduardo@edu.unisinos.br
+* Arquitetura de Von Neumann
++ A arquitetura de Von Neumann mesmo depois de varias decadas continua a ser parte da informatica atual.
++ Essa arquitetura foi proposta por Neumann na década de 40.
++ Composto por basicamente 3 subsistemas: CPU, Unidade de Memória Principal (RAM) e Unidades de Entradas/Saídas(IO).
++ [[./img/archNeumann.png]]
+** Detalhes
++ Unidade de Controle: identifica e decodifica as [[Instruções]], adicionando a unidade responsável pela sua execução
++ Unidade de Aritmética e Lógica(ALU): executa as operações lógicas e aritméticas
++ Unidade de Memória Principal (RAM - Random Acess Memory): armazena o programa e seus dados(variáveis etc...)
++ Unidade de Entrada: Fazem a interface entre informações externas e Unidade de Memória Principal. Exemplos: Telclado, mouse ...
+  - Unidades de Saída: Exibem as informações que encontradas na Unidade de Memória Principal para meios externos. Exemplos: Monitores, Impressoras...
+* Instruções
+Instruções são regras que vão indicar ao computador quais dados devem ser operados e quais operações devem ser realizadas.
+
+10 + 10 =
+** etapas de processamento de instruções
+1. Unidade de Controle busca por instruções na Memória.
+2. Unidade de Controle decodifica a instruçãom, definindo as posições de memória necessárias para sua execução
+3. Unidade de Controle transfere os dados para a ALU
+4. A ALU executa as operações sobre os dados e resultado é armazenado na memória
+* Linguagem de Máquina x Linguagem de Alto Nível
++ Para instruir uma maquina é necessário uma linguagem especial, Linguagem de Maquina.
+
+Linguagem de Máquina - Tipo mais primitivo de linguagem. É a linguagem que o CPU compreende.
+
+Linguagem de Alto Nível - Linguagens criadas para facilitar a comunicação com o CPU. Essas linguagens precisam ser traduzidas para a Linguagem de Máquina.
+** Processos de Tradução
++ Linguagens de Alto Nível:
+  - C
+  - C++
+  - Java
+  - Pascal
++ Essas linguagens são traduzidas para a linguagem de maquina.
++ Os dois principais processos de tradução são:
+**** Processo de Interpretação
++ um interpretador é um software que recebe como /input/ o código fonte.
++ o interpretador lê linha por linha do arquivo fonte e executa em ordem das instruções nele escritas.
++ Um programa pode ser executado em qualquer maquina, desde que haja o interpretador disponivel. O codigo ira funcionar no Windows, OSX ou Linux mas eles precisam do interpretador.
++ Execução mais lenta
++ O Erro não é detectado ate ser instruido no CPU
+**** Processo de Compilação
++ Lingua -> Compilador -> Programa Objeto -> Arquitetura -> Execução
++ Erro é detectado na compilação
++ O código produzido não é portavel para qualquer arquitetura
++ Diferentes executaveis para diferentes arquiteturas
+
++ Caso do Java:
+
+  - Java é uma Lingua Compilada
+  - O compilador Java, entretanto não gera código para o /host/ e sim para a máquina virtual java(a JVM).
+  - Java é uma linguagem compilada porém possuia as vantagens de uma linguagem interpretada por possuir uma /virtual machine/ ou seja pode ser executada em qualquer arquitetura. E também possui as vantagens de uma compilada, mostrando erros na hora da compilação.
+  - Programa fonte(teste.java) -> Compilador Javac -> programa objeto(bytecode) exemplo teste.class --> jvm
+
++ Tipos de Erro:
+ - Lógico(compilador não consegue prever)
+ - Compilação (compilador encontrou algum erro seja ele na syntax ou estrutura); Se compilar irá gerar um executavel; Se compilar irá gerar um executavel.
+ - Execução(segmentation fault, etc...)
+
+* Algoritmo
++ Um algoritmo é uma sequência de passos finita, que devem ser seguidos para alcançar algum objetivo
++ Para ordenar ao computador que realize uma determinada tarefa, um algoritmo é descrito em uma linguagem de programação
++ Este algoritmo é, então, compilado (ou interpretado) e executado.
+** Formas de Representar um Algoritmo
++ Representam o algoritmo no nível lógico
+  - Abstrai detalhes referentes ao código
+  - não é ligada a alguma linguagem
++ Fluxograma
+  - Forma mais visual de ver o algoritmo
+  - [[./img/fluxo.png]]
+  - [[./img/fluxo2.png]]
+
++ Pseudocódigo(português estruturado)
+  - [[./img/pseud.png]]
++ Descritiva (narração)
+  - [[./img/miojo.png]]
+
+
+* Programação
+
++ Não usar acento gráfico.
++ variavel atribuído ao lugar da memória.
++ x = 10; x recebe 10
++ = sinal de atribuição; == sinal de idêntico
+  |                |             |              |
+  |----------------+-------------+--------------|
+  | 7, -9          | inteiro     | int          |
+  | "string"       | texto       | string       |
+  | 4.6, 9.9, 10.2 | ponto float | float/double |
+  | True, False    | booleano    | bool         |
+  | ----------     | ---------   | ------------ |
+
+** Principais paradigmas de programação
++ Estruturada
+  - Sequência
+  - Seleção
+  - Iteração (volta/loop)
+
++ Orientada a objetos
+  - Criação de Classes
+  - Divisão do sistema em módulos
+  - Interação
+
+** Python
+   - Interpretada
+   - Orientada Objetos
+
+     + Como receber dados do usuário pelo teclado?
+       - Por exemplo como pedir o nome e aidade do usuário?
+       - através do função input()
+#+BEGIN_SRC python
+
+nome = input("qual seu nome")
+idade = int(input("qual sua idade"))
+altura = float(input("qual sua altura"))
+
+#+END_SRC
